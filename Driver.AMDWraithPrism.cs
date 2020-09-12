@@ -15,6 +15,16 @@ namespace AMDWraithDriver
         private bool pushRequested;
         public AorusIT8297()
         {
+            
+        }
+
+        public void Dispose()
+        {
+            disposing = true;
+        }
+
+        public void Configure(DriverDetails driverDetails)
+        {
             cmrgb = new CMRGBController();
             Debug.WriteLine(cmrgb.getVersion());
 
@@ -41,8 +51,8 @@ namespace AMDWraithDriver
                 Debug.WriteLine(cmrgb.assign_leds_to_channels(AMDWraith.LedChannel.OFF, AMDWraith.LedChannel.OFF, ring_leds).PrettyBytes());
                 Thread.Sleep(500);
             }
-            
-           
+
+
 
 
 
@@ -62,16 +72,6 @@ namespace AMDWraithDriver
                 Thread.CurrentThread.IsBackground = true;
                 ManagePOV();
             }).Start();
-        }
-
-        public void Dispose()
-        {
-            disposing = true;
-        }
-
-        public void Configure(DriverDetails driverDetails)
-        {
-            //throw new NotImplementedException();
         }
 
         public List<ControlDevice> GetDevices()
