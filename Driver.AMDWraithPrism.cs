@@ -106,7 +106,12 @@ namespace AMDWraithDriver
                 IsSource = false,
                 SupportsPull = false,
                 SupportsCustomConfig = false,
-                Id = Guid.Parse("49440cc2-8ca3-4e35-a9a3-88b024cc0e2d")
+                Id = Guid.Parse("49440cc2-8ca3-4e35-a9a3-88b024cc0e2d"),
+                Author = "mad ninja",
+                Blurb = "Basic driver for RGB AMD Wraith devices that uses persistence of vision to achieve full LED control",
+                CurrentVersion = new ReleaseNumber("1.1.0.0"),
+                GitHubLink = "https://github.com/SimpleLed/Driver.AMDWraithPrism",
+                IsPublicRelease = true
             };
         }
 
