@@ -7,13 +7,13 @@ using SimpleLed;
 
 namespace AMDWraithDriver
 {
-    public class AorusIT8297 : ISimpleLed
+    public class AMDWraithProvider : ISimpleLed
     {
         private ControlDevice.LedUnit[] leds;
         CMRGBController cmrgb;
         private bool disposing;
         private bool pushRequested;
-        public AorusIT8297()
+        public AMDWraithProvider()
         {
             
         }
@@ -51,11 +51,7 @@ namespace AMDWraithDriver
                 Debug.WriteLine(cmrgb.assign_leds_to_channels(AMDWraith.LedChannel.OFF, AMDWraith.LedChannel.OFF, ring_leds).PrettyBytes());
                 Thread.Sleep(500);
             }
-
-
-
-
-
+            
             leds = new ControlDevice.LedUnit[15];
             for (int i = 0; i < 15; i++)
             {
@@ -109,7 +105,7 @@ namespace AMDWraithDriver
                 Id = Guid.Parse("49440cc2-8ca3-4e35-a9a3-88b024cc0e2d"),
                 Author = "mad ninja",
                 Blurb = "Basic driver for RGB AMD Wraith devices that uses persistence of vision to achieve full LED control",
-                CurrentVersion = new ReleaseNumber("1.1.0.1"),
+                CurrentVersion = new ReleaseNumber("1.1.0.2"),
                 GitHubLink = "https://github.com/SimpleLed/Driver.AMDWraithPrism",
                 IsPublicRelease = true
             };
