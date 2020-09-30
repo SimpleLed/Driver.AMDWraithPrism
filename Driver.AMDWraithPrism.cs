@@ -126,6 +126,8 @@ namespace AMDWraithDriver
             return "AMD Wraith Prism";
         }
 
+        public event EventHandler DeviceRescanRequired;
+
         public void ManagePOV()
         {
             LEDColor[] myleds= new LEDColor[15];
